@@ -1,6 +1,3 @@
-// import '@shopify/polaris/build/esm/styles.css';
-// import enTranslations from '@shopify/polaris/locales/en.json';
-// import { AppProvider } from '@shopify/polaris';
 import Images from './components/Images'
 import "./App.css"
 import { useEffect, useRef, useState } from 'react';
@@ -23,11 +20,17 @@ function App() {
     async function getImgs() {
       try {
         const response = await fetch(`https://api.nasa.gov/planetary/apod?start_date=${checkDate}&api_key=${api.key}`)
-        const data = await response.json()
-        setImages(data)
+        if (!response.ok) {
+          throw new Error("Server error; failed to get images. Please try again")
+        }
+        else {
+          const data = await response.json()
+          setImages(data)
+        }
+
       }
       catch (err) {
-        console.log(err)
+        console.log(err.message)
       }
       finally {
         setIsLoading(false)
@@ -85,15 +88,25 @@ function App() {
         </form>
 
         <div className="dateinfo">
-          <h3>Showing images from <strong>{checkDate}</strong></h3>
+          {(!isLoading && images) && <h3>Showing images from <strong>{checkDate}</strong></h3>}
         </div>
       </div>
 
-      {!isLoading ? images.map(image => (
-        <Images images={image} key={image.date} />
-      )) : <p className='loading-state'>Loading...</p>}
-
+      {!isLoading && images
+        ? images.map(image => (
+          <Images images={image} key={image.date} />
+        )) :
+        (!isLoading && !images ?
+          <div className='dateinfo'>
+            <h3>An error has occured. Please try again</h3>
+          </div> : // INTERNAL SERVER ERROR HANDLING
+          <div className='dateinfo'>
+            <h3>Loading...</h3>
+          </div>
+        )}
     </div>
+
+
   );
 }
 

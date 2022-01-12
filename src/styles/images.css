@@ -71,14 +71,16 @@
 }
 
 .like-anim {
-  background-color: red;
-  width: 3em;
-  height: 3em;
+  background-image: url("../images/heart.png");
+  background-size: cover;
+  background-position: center;
+  width: 1.5em;
+  height: 1.5em;
   border-radius: 50%;
   position: absolute;
   top: 75%;
   right: 50%;
-  animation: trigger-like 2s forwards;
+  animation: trigger-like 1.5s forwards;
   opacity: 0;
 }
 
@@ -100,10 +102,12 @@
   }
 
   50% {
-    opacity: 100%;
+    opacity: 1;
+    width: 3em;
+    height: 3em;
   }
 
   100% {
-    opacity: 0%;
+    opacity: 0;
   }
 }

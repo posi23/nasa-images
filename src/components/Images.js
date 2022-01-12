@@ -1,6 +1,6 @@
-// import { Button, Layout, Card } from '@shopify/polaris'
 import { useRef, useState } from "react";
 import "../styles/images.css"
+import heartPic from "../images/heart.png"
 
 
 const Images = ({ images }) => {
@@ -22,7 +22,7 @@ const Images = ({ images }) => {
 
                   setTimeout(() => {
                         likeAnim.current.className = ""
-                  }, 2000);
+                  }, 1500);
             }
       }
 
@@ -30,7 +30,9 @@ const Images = ({ images }) => {
             <>
 
                   <div className="main-post">
-                        <div ref={likeAnim} id="like-anim" className=""></div>
+                        <div ref={likeAnim} id="like-anim" className="">
+                              {/* <img src={heartPic} alt="heart animation" /> */}
+                        </div>
                         <div className="img-container">
                               <img src={images.hdurl} alt="main" />
                         </div>
