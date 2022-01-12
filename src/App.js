@@ -49,7 +49,7 @@ function App() {
 
     // condition to handle invalid date chosen on the mobile web
     if (dateRef.current.value > dateRef.current.max || dateRef.current.value < dateRef.current.min) {
-      setSelectedDate("2022-01-01")
+      setSelectedDate(checkDate) // set date on Datepicker to most recent queried date
       return alert(`APOD API cannot provide any images for this day: ${dateRef.current.value} \n\nPlease choose a date between ${dateRef.current.min} and ${dateRef.current.max}`)
     }
     setCheckDate(selectedDate)
