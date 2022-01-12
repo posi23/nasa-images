@@ -19,7 +19,7 @@ function App() {
   useEffect(() => {
     async function getImgs() {
       try {
-        const response = await fetch(`https://api.nasa.gov/planetary/apod?start_date=${checkDate}&api_key=${api.key}`)
+        const response = await fetch(`https://api.nasa.gov/planetary/apod?start_date=${checkDate}&thumbs=true&api_key=${api.key}`)
         if (!response.ok) {
           throw new Error("Server error; failed to get images. Please try again")
         }

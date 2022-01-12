@@ -11,6 +11,15 @@
   width: 100%;
 }
 
+.main-post .img-container {
+  width: 100%;
+  height: 30em;
+}
+
+.img-container iframe {
+  border: none;
+}
+
 .img-info {
   /* position: relative; */
   padding: 1em;
