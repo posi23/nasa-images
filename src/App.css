@@ -37,17 +37,72 @@
   }
 } */
 
+.App a {
+  text-decoration: none;
+}
 .App h1 {
   text-align: center;
   margin: 0.5em 0;
   font-weight: bold;
   font-size: 2rem;
+  color: rgb(67, 79, 60);
 }
 
 .App p {
-  margin: 0.5em 0 1em;
   text-align: center;
+  margin: 0.5em 0 1em;
   font-weight: normal;
   color: grey;
   font-size: 1rem;
+}
+
+form,
+.dateinfo {
+  margin: 1.5em 0.5em;
+}
+
+form .label {
+  margin-bottom: 0.3em;
+}
+
+form #datepicker {
+  margin-bottom: 0.3em;
+}
+
+.dateinfo h3 {
+  font-weight: normal;
+  color: rgb(2, 2, 115);
+}
+
+.loading-state {
+  font-size: 1.5em;
+  font-weight: bold;
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  text-align: center;
+}
+
+form button {
+  width: 5em;
+  border-radius: 0.5em;
+  padding: 1em;
+  font-size: 1rem;
+  background-color: rgb(78, 73, 73);
+  border: none;
+  cursor: pointer;
+}
+
+@media (min-width: 900px) {
+  form,
+  .dateinfo {
+    margin: 1.5em 10em;
+  }
+}
+
+@media (min-width: 1130px) {
+  form,
+  .dateinfo {
+    margin: 1.5em 20em;
+  }
 }
