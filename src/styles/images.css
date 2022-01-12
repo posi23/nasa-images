@@ -74,12 +74,11 @@
   background-image: url("../images/heart.png");
   background-size: cover;
   background-position: center;
-  width: 1.5em;
-  height: 1.5em;
-  border-radius: 50%;
+  width: 5em;
+  height: 5em;
   position: absolute;
-  top: 75%;
-  right: 50%;
+  top: 65%;
+  right: 40%;
   animation: trigger-like 1.5s forwards;
   opacity: 0;
 }
@@ -103,8 +102,8 @@
 
   50% {
     opacity: 1;
-    width: 3em;
-    height: 3em;
+    width: 10em;
+    height: 10em;
   }
 
   100% {
