@@ -26,6 +26,8 @@ const Images = ({ images }) => {
             }
       }
 
+      // const addLoopParam = "&playlist=RtDSxi-D4KA&autoplay=1&muted=1&loop=1"
+
       return (
             <>
 
