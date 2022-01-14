@@ -10,7 +10,9 @@ const api = {
 function App() {
 
   const [images, setImages] = useState(); // array of JSON data returned from the API
-  const [checkDate, setCheckDate] = useState(new Date(new Date().getTime() - 2160000000).toLocaleDateString("en-CA")) // the start_date parameter to be passed into the API
+
+  // the start_date parameter to be passed into the API
+  const [checkDate] = useState(new Date(new Date().getTime() - 2160000000).toLocaleDateString("en-CA"))
   const [isLoading, setIsLoading] = useState(true) // loading state
 
   // fetch data from API at the start of the website and anytime 'checkDate' changes
