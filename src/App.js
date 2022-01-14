@@ -10,7 +10,7 @@ const api = {
 function App() {
 
   const [images, setImages] = useState(); // array of JSON data returned from the API
-  const [selectedDate, setSelectedDate] = useState("2022-01-01") // the default date to be used for the date picker
+  const [selectedDate, setSelectedDate] = useState(new Date(new Date().getTime() - 2160000000).toLocaleDateString("en-CA")) // the default date to be used for the date picker
   const [checkDate, setCheckDate] = useState(selectedDate) // the start_date parameter to be passed into the API
   const [isLoading, setIsLoading] = useState(true) // loading state
   const dateRef = useRef() // reference to the date picker element
