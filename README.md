@@ -1,4 +1,4 @@
-**SPACESTAGRAM**
+# SPACESTAGRAM
 
 A fully responsive website/application named Spacestagram that displays images gotten from a NASA API and allows users to like or unlike each image.
 
